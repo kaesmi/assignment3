@@ -10,5 +10,14 @@ public class Main {
         for(BST.BSTEntry elem : tree) {
             System.out.println("key is " + elem.getKey() + " and value is " + elem.getValue());
         }
+
+        int keyToCheck1 = 4;
+        int keyToCheck2 = 9;
+
+        boolean key1Exists = tree.consist(keyToCheck1);
+        boolean key2Exists = tree.consist(keyToCheck2);
+
+        System.out.println("Key " + keyToCheck1 + " exists in the BST: " + key1Exists);
+        System.out.println("Key " + keyToCheck2 + " exists in the BST: " + key2Exists);
     }
 }

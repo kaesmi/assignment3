@@ -8,6 +8,24 @@ public class BST<K extends Comparable<K>, V> implements Iterable <BST<K, V>. BST
         root = null;
         size = 0;
     }
+
+    public boolean consist(K key) {
+        return consist(root, key);
+    }
+    private boolean consist(Node node, K key) {
+        if(node == null) {
+            return false;
+        }
+        int cmp = key.compareTo(node.key);
+        if(cmp < 0) {
+            return consist(node.left, key);
+        }
+        else if(cmp > 0) {
+            return consist(node.right, key);
+        } else {
+            return true;
+        }
+    }
     public void put(K key, V value) {
         root = put(root, key, value);
     }
